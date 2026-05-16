@@ -1,0 +1,541 @@
+/* ── Reset ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
+html { scroll-behavior: smooth; }
+
+/* ── Base ────────────────────────────────────────────── */
+body {
+  background: black;
+  color: white;
+  font-family: "Century Gothic", "AppleGothic", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ── Navbar ──────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: black;
+  padding: 18px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+}
+
+/* "Portfolio" — rough handwritten font */
+.logo {
+  font-family: Caveat;
+  font-size: 60px;
+  font-weight: 200;
+  color: white;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  align-items: center;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  font-family: "Century Gothic", "AppleGothic", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 5px 14px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+  background: white;
+  color: black;
+}
+
+.resume-btn span { font-size: 0.8rem; }
+
+/* ── Main ────────────────────────────────────────────── */
+main {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 380px 60px 100px;
+}
+
+/* ── Shared card styles ──────────────────────────────── */
+.card {
+  border: 1px solid white;
+  border-radius: 5px;
+  position: relative;
+  overflow: visible;         /* waves can bleed outside */
+  background: black;
+}
+
+.dark-card {
+  background: black;
+  border: 1px solid white;
+  border-radius: 5px;
+  position: relative;
+  overflow: visible;
+}
+
+
+/* Card corner wave decorations */
+.card-wave {
+  display: none;
+}
+
+/* Inter-section waves hidden */
+.inter-wave {
+  display: none;
+}
+
+.card-wave--findme {
+  top: 10px;
+  left: -10px;
+  width: 70px;
+  height: 200px;
+}
+
+/* Card label (top-left italic) */
+.card-label {
+  font-family: Caveat;
+  font-size: 2rem;
+  font-weight: 200;
+  color: white;
+  position: absolute;
+  top: 18px;
+  left: 26px;
+  right: 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.card-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: white;
+  margin-left: 14px;
+}
+
+/* Inter-section waves */
+.inter-wave {
+  height: 120px;
+  display: flex;
+  pointer-events: none;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 1;
+}
+
+.inter-wave--right { justify-content: flex-end; padding-right: 380px; }
+.inter-wave--left  { justify-content: flex-start; padding-left: 420px; }
+.inter-wave--skills-projects { height: 120px; }
+
+/* Hero→About wave: matches inter-wave--right since hero is also 1100px wide */
+.inter-wave--hero-about { padding-right: 380px; height: 480px; }
+
+.inter-wave svg { display: none; }
+
+/* ── Hero ────────────────────────────────────────────── */
+.hero-section {
+  margin-top: 0;
+}
+
+.hero-card {
+  padding: 80px 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Portrait frames — white background boxes */
+.portrait {
+  flex-shrink: 0;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.portrait img,
+.portrait svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-portrait {
+  width: 320px;
+  height: 395px;
+}
+
+.hero-text { max-width: 500px; }
+
+.greeting {
+  font-size: 1.4rem;
+  color: #ccc;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.hero-name {
+  font-family: Caveat;
+  font-size: 5.5rem;
+  font-weight: 200;
+  color: white;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  color: white;
+  max-width: 700px;
+  line-height: 1.4;
+}
+
+/* ── About ───────────────────────────────────────────── */
+.about-card {
+  padding: 160px 160px 120px;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-inner {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+}
+
+.about-portrait {
+  width: 560px;
+}
+
+.about-text p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: white;
+  text-indent: 40px;
+  max-width: 600px;
+}
+
+/* ── Skills ──────────────────────────────────────────── */
+.skills-section {
+  text-align: center;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading {
+  font-family: "Bradley Hand", "Bradley Hand ITC", cursive;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.skills-card {
+  border: 1px solid white;
+  padding: 90px 48px 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.skill-icon-box {
+  width: 96px;
+  height: 96px;
+  border: 2px solid #f0f0f0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  position: relative;
+  z-index: 1;
+  transition: background 0.2s;
+  cursor: default;
+}
+
+.skill-icon-box svg,
+.skill-icon-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.2s;
+}
+
+.skill-icon-box:hover {
+  background: white;
+}
+
+.skill-icon-box:hover svg,
+.skill-icon-box:hover img {
+  filter: brightness(0);
+}
+
+/* ── Projects ────────────────────────────────────────── */
+.projects-card {
+  padding: 140px 100px 100px;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.project-logo {
+  flex-shrink: 0;
+  width: 130px;
+  height: 130px;
+  border: 2px solid #f0f0f0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
+  letter-spacing: 0.03em;
+  text-align: center;
+  background: white;
+}
+
+.project-logo--shed {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.project-item p {
+  font-size: 0.8rem;
+  line-height: 1.85;
+  color: white;
+  max-width: 600px;
+}
+
+.project-divider { display: none; }
+
+/* ── Diagonal corner lines ───────────────────────────── */
+
+/* Bottom-right: Hero, Skills, Find Me */
+.hero-card::after,
+.skills-card::after,
+.social-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    to bottom right,
+    transparent calc(50% - 0.5px),
+    white calc(50% - 0.5px),
+    white calc(50% + 0.5px),
+    transparent calc(50% + 0.5px)
+  );
+  pointer-events: none;
+}
+
+/* Bottom-left: About Me, Projects */
+.about-card::after,
+.projects-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    to bottom left,
+    transparent calc(50% - 0.5px),
+    white calc(50% - 0.5px),
+    white calc(50% + 0.5px),
+    transparent calc(50% + 0.5px)
+  );
+  pointer-events: none;
+}
+
+
+
+/* ── Find Me ─────────────────────────────────────────── */
+.find-me-section {
+  text-align: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-card {
+  border: 1px solid white;
+  padding: 90px 40px 70px;
+  display: flex;
+  justify-content: center;
+  gap: 190px;
+  margin-bottom: 40px;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.social-circle {
+  width: 92px;
+  height: 92px;
+  border: 2px solid #f0f0f0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.social-circle svg {
+  width: 38px;
+  height: 38px;
+  color: white;
+  transition: color 0.2s;
+}
+
+
+.social-link:hover .social-circle              { background: white; }
+.social-link:hover .social-circle svg          { color: black; }
+.social-link:hover .social-circle img          { filter: brightness(0); }
+
+.social-link span {
+  font-size: 1.15rem;
+  color: white;
+}
+
+.email-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 14px 50px;
+  border-radius: 5px;
+  font-family: "Century Gothic", "AppleGothic", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.email-btn:hover { background: white; color: black; }
+
+/* ── Email modal ─────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal-overlay.active { display: flex; }
+
+.email-modal {
+  background: black;
+  border: 1px solid white;
+  border-radius: 14px;
+  padding: 40px 36px 32px;
+  width: 460px;
+  max-width: 92vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px; right: 18px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-close:hover { color: white; }
+
+.email-modal textarea {
+  background: black;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  font-family: "Century Gothic", "AppleGothic", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 16px;
+  resize: vertical;
+  min-height: 160px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.email-modal textarea:focus        { border-color: #666; }
+.email-modal textarea::placeholder { color: #444; }
+
+.send-btn {
+  align-self: center;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 9px 40px;
+  border-radius: 5px;
+  font-family: "Century Gothic", "AppleGothic", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.send-btn:hover { background: white; color: black; }

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Max Messick — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: black;
+      color: white;
+      font-family: "Century Gothic", "AppleGothic", sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 24px 80px;
+    }
+
+    /* Back link */
+    .back-link {
+      align-self: flex-start;
+      max-width: 860px;
+      width: 100%;
+      margin-bottom: 32px;
+    }
+
+    .back-link a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      font-family: "Century Gothic", "AppleGothic", sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      padding: 10px 24px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .back-link a:hover { background: white; color: black; }
+
+    /* Resume document */
+    .resume-doc {
+      background: black;
+      color: white;
+      width: 100%;
+      max-width: 860px;
+      padding: 52px 52px 64px;
+      border: 1px solid white;
+    }
+
+    /* Header */
+    .resume-header {
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid white;
+    }
+
+    .resume-name {
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .resume-title {
+      font-size: 0.9rem;
+      color: #aaa;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    /* Two-column layout */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+    }
+
+    /* Section headings */
+    .resume-section-title {
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: white;
+      border-bottom: 1px solid white;
+      padding-bottom: 4px;
+      margin-bottom: 14px;
+      margin-top: 28px;
+    }
+
+    .resume-section-title:first-child { margin-top: 0; }
+
+    /* Left column */
+    .left-col { font-size: 0.82rem; line-height: 1.7; }
+
+    .detail-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 2px;
+      margin-top: 12px;
+    }
+
+    .detail-label:first-child { margin-top: 0; }
+
+    .detail-value { color: #ccc; font-size: 0.82rem; }
+
+    .detail-link {
+      color: white;
+      text-decoration: underline;
+      font-size: 0.82rem;
+    }
+
+    .detail-link:hover { color: #aaa; }
+
+    /* Skills with progress bars */
+    .skill-row { margin-bottom: 12px; }
+
+    .skill-name {
+      font-size: 0.8rem;
+      color: #ccc;
+      margin-bottom: 5px;
+    }
+
+    .skill-bar {
+      height: 4px;
+      background: #333;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: white;
+    }
+
+    /* Right column */
+    .right-col { font-size: 0.82rem; line-height: 1.7; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: white;
+    }
+
+    .job-location {
+      font-size: 0.76rem;
+      color: #888;
+      text-align: right;
+    }
+
+    .job-dates {
+      font-size: 0.76rem;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .job-desc {
+      color: #ccc;
+      font-size: 0.82rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: white;
+    }
+
+    .edu-location { font-size: 0.76rem; color: #888; }
+    .edu-dates { font-size: 0.76rem; color: #888; margin-bottom: 6px; }
+
+    .edu-desc {
+      color: #ccc;
+      font-size: 0.82rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="back-link">
+    <a href="index.html">&#8592; Back to Portfolio</a>
+  </div>
+
+  <div class="resume-doc">
+
+    <header class="resume-header">
+      <h1 class="resume-name">Max Messick</h1>
+      <p class="resume-title">Frontend Developer &amp; Designer</p>
+    </header>
+
+    <div class="resume-body">
+
+      <!-- LEFT COLUMN -->
+      <div class="left-col">
+
+        <h2 class="resume-section-title">Details</h2>
+
+        <p class="detail-label">Address</p>
+        <p class="detail-value">Columbus, Ohio</p>
+
+        <p class="detail-label">Phone</p>
+        <p class="detail-value">Your phone number</p>
+
+        <p class="detail-label">Email</p>
+        <p class="detail-value">your@email.com</p>
+
+        <h2 class="resume-section-title">Links</h2>
+        <a class="detail-link" href="#">LinkedIn</a>
+
+        <h2 class="resume-section-title">Skills</h2>
+
+        <div class="skill-row">
+          <p class="skill-name">Angular</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-row">
+          <p class="skill-name">HTML/CSS/JavaScript</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-row">
+          <p class="skill-name">Ionic Framework</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+        </div>
+        <div class="skill-row">
+          <p class="skill-name">Cypress</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+        </div>
+        <div class="skill-row">
+          <p class="skill-name">Agile Project Management</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-row">
+          <p class="skill-name">Git</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-row">
+          <p class="skill-name">SQL</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+        </div>
+        <div class="skill-row">
+          <p class="skill-name">Cybersecurity Training</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+        </div>
+        <div class="skill-row">
+          <p class="skill-name">Penetration testing</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:50%"></div></div>
+        </div>
+        <div class="skill-row">
+          <p class="skill-name">Web security</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="right-col">
+
+        <h2 class="resume-section-title">Employment History</h2>
+
+        <div class="job-header">
+          <span class="job-title">Senior Frontend Developer, [Company]</span>
+          <span class="job-location">Zurich, Switzerland &amp;<br>Bratislava, Slovakia</span>
+        </div>
+        <p class="job-dates">Jul 2017 — Present</p>
+        <p class="job-desc">A fin-tech company focusing on sustainable investing with an online web application. Responsible for Frontend development of this application in Angular. Also a SCRUM master for the development team.<br><br>During the past 5 years in the company, had the chance to experience and improve in a lot of areas, such as ownership, project creation, leadership, development, and more.</p>
+
+        <div class="job-header">
+          <span class="job-title">UX Designer, [Company]</span>
+          <span class="job-location">Brno, Czech Republic</span>
+        </div>
+        <p class="job-dates">2016 — 2017</p>
+        <p class="job-desc">UX design role focused on interface design and user experience.</p>
+
+        <div class="job-header">
+          <span class="job-title">Frontend Developer &amp; Designer, [Company]</span>
+          <span class="job-location">Brno, Czech Republic</span>
+        </div>
+        <p class="job-dates">2015 — 2016</p>
+        <p class="job-desc">Frontend development and design work for web projects.</p>
+
+        <h2 class="resume-section-title">Education</h2>
+
+        <div class="edu-header">
+          <span class="edu-degree">Master, [University]</span>
+          <span class="edu-location">Brno, Czech Republic</span>
+        </div>
+        <p class="edu-dates">2015 — 2017</p>
+        <p class="edu-desc">Studies: Applied Computer Science — Service Science, Management, and Engineering.<br>Thesis: User Interface design for certificate operations with Network Security Services.</p>
+
+        <div class="edu-header">
+          <span class="edu-degree">Bachelor, [University]</span>
+          <span class="edu-location">Brno, Czech Republic</span>
+        </div>
+        <p class="edu-dates">2011 — 2015</p>
+        <p class="edu-desc">Studies: Applied Computer Science.</p>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
