@@ -651,7 +651,7 @@ main {
   .hero-tagline { font-size: 0.85rem; }
 
   /* About */
-  .about-card { padding: 80px 20px 60px; }
+  .about-card { padding: 80px 60px 60px; }
   .about-inner { flex-direction: column; gap: 30px; text-align: center; }
   .about-portrait { width: 220px; align-self: center; }
   .about-text p { text-indent: 0; }
@@ -661,7 +661,7 @@ main {
   .skills-card { gap: 30px; padding: 80px 20px 40px; }
 
   /* Projects */
-  .projects-card { padding: 80px 20px 60px; }
+  .projects-card { padding: 80px 60px 60px; }
   .project-item { flex-direction: column; gap: 20px; text-align: center; }
 
   /* Find Me */
