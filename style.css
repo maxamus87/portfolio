@@ -583,9 +583,9 @@ main {
   .hero-name { font-size: 4rem; }
 
   /* About — side by side with smaller portrait */
-  .about-card { padding: 100px 30px 80px; }
+  .about-card { padding: 100px 100px 80px; }
   .about-inner { flex-direction: row; gap: 30px; }
-  .about-portrait { width: 140px !important; flex-shrink: 0; }
+  .about-portrait { width: 300px !important; flex-shrink: 0; }
   .about-text { flex: 1; min-width: 0; overflow: hidden; }
   .about-text p { max-width: 100%; text-indent: 0; }
 
