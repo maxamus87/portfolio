@@ -657,4 +657,14 @@ main {
 
   /* Card labels */
   .card-label { font-size: 1.4rem; }
+
+  /* Diagonal corner lines — smaller on mobile */
+  .hero-card::after,
+  .skills-card::after,
+  .social-card::after,
+  .about-card::after,
+  .projects-card::after {
+    width: 36px;
+    height: 36px;
+  }
 }
