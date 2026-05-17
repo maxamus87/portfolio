@@ -574,15 +574,19 @@ main {
   .nav-links { gap: 20px; }
   .nav-links a { font-size: 0.75rem; padding: 4px 10px; }
 
-  main { padding: 240px 30px 80px; }
+  main { padding: 200px 30px 80px; }
 
-  .hero-card { padding: 60px 40px; }
-  .hero-inner { gap: 50px; }
+  /* Hero */
+  .hero-card { padding: 60px 40px; max-width: 100%; }
+  .hero-inner { gap: 50px; justify-content: center; }
   .hero-portrait { width: 260px; height: 320px; }
   .hero-name { font-size: 4rem; }
 
-  .about-card { padding: 120px 80px 80px; }
-  .about-portrait { width: 350px; }
+  /* About — stack vertically on tablet */
+  .about-card { padding: 100px 40px 80px; }
+  .about-inner { flex-direction: column; text-align: center; gap: 30px; }
+  .about-portrait { width: 280px; align-self: center; }
+  .about-text p { text-indent: 0; max-width: 100%; }
 
   .skills-card { gap: 60px; }
 
@@ -591,9 +595,22 @@ main {
 
   .social-card { gap: 80px; }
 
-  .inter-wave { height: 80px; }
-  .inter-wave--hero-about { height: 200px; }
+  /* Remove inter-wave side padding to prevent horizontal overflow */
+  .inter-wave { height: 80px; padding: 0; }
+  .inter-wave--right { padding: 0; }
+  .inter-wave--left { padding: 0; }
+  .inter-wave--hero-about { height: 160px; padding: 0; }
   .inter-wave--skills-projects { height: 80px; }
+
+  /* Diagonal corner lines — slightly smaller on tablet */
+  .hero-card::after,
+  .skills-card::after,
+  .social-card::after,
+  .about-card::after,
+  .projects-card::after {
+    width: 55px;
+    height: 55px;
+  }
 }
 
 /* ── Mobile (≤ 768px) ────────────────────────────────── */
