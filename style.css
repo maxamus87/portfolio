@@ -1,6 +1,6 @@
 /* ── Reset ───────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 /* ── Base ────────────────────────────────────────────── */
 body {
@@ -650,9 +650,11 @@ main {
   .find-me-section { max-width: 100%; }
   .social-card { gap: 40px; padding: 80px 20px 40px; flex-wrap: wrap; }
 
-  /* Spacing */
-  .inter-wave { height: 50px; }
-  .inter-wave--hero-about { height: 80px; }
+  /* Spacing — remove side padding that causes horizontal overflow */
+  .inter-wave { height: 50px; padding: 0; }
+  .inter-wave--right { padding: 0; }
+  .inter-wave--left { padding: 0; }
+  .inter-wave--hero-about { height: 80px; padding: 0; }
   .inter-wave--skills-projects { height: 50px; }
 
   /* Card labels */
