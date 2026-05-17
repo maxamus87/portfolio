@@ -212,6 +212,31 @@
       line-height: 1.75;
       margin-bottom: 20px;
     }
+
+    /* ── Tablet ── */
+    @media (max-width: 768px) {
+      body { padding: 30px 16px 60px; }
+
+      .resume-doc { padding: 32px 24px 40px; }
+
+      .resume-name { font-size: 2.2rem; }
+
+      .resume-body {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 480px) {
+      body { padding: 20px 10px 40px; }
+
+      .resume-doc { padding: 24px 16px 32px; }
+
+      .resume-name { font-size: 1.8rem; }
+
+      .back-link a { font-size: 0.85rem; padding: 8px 16px; }
+    }
   </style>
 </head>
 <body>
