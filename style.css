@@ -567,14 +567,14 @@ main {
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── Tablet (769px – 1024px) ─────────────────────────── */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* ── Tablet (769px – 1280px) ─────────────────────────── */
+@media (min-width: 769px) and (max-width: 1280px) {
   .navbar { padding: 14px 30px; }
   .logo { font-size: 44px; }
   .nav-links { gap: 20px; }
   .nav-links a { font-size: 0.75rem; padding: 4px 10px; }
 
-  main { padding: 120px 30px 80px; }
+  main { padding: 170px 30px 80px; }
 
   /* Hero */
   .hero-card { padding: 60px 40px; max-width: 100%; }
@@ -583,10 +583,11 @@ main {
   .hero-name { font-size: 4rem; }
 
   /* About — side by side with smaller portrait */
-  .about-card { padding: 100px 40px 80px; }
-  .about-inner { flex-direction: row; gap: 40px; }
-  .about-portrait { width: 200px; flex-shrink: 0; }
-  .about-text p { max-width: 100%; }
+  .about-card { padding: 100px 30px 80px; }
+  .about-inner { flex-direction: row; gap: 30px; }
+  .about-portrait { width: 140px !important; flex-shrink: 0; }
+  .about-text { flex: 1; min-width: 0; overflow: hidden; }
+  .about-text p { max-width: 100%; text-indent: 0; }
 
   .skills-card { gap: 60px; }
 
