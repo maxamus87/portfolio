@@ -1,5 +1,5 @@
 /* ── Reset ───────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 /* ── Base ────────────────────────────────────────────── */
@@ -46,6 +46,8 @@ body {
   align-items: center;
   background: transparent;
   border: 1px solid white;
+  border-radius: 5px;
+  border-radius: 5px;
   color: white;
   text-decoration: none;
   font-family: "Century Gothic", "AppleGothic", sans-serif;
@@ -189,7 +191,7 @@ main {
   height: 395px;
 }
 
-.hero-text { max-width: 500px; }
+.hero-text { max-width: 400px; }
 
 .greeting {
   font-size: 1.4rem;
@@ -539,3 +541,120 @@ main {
 }
 
 .send-btn:hover { background: white; color: black; }
+
+/* ── Hamburger button ────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 101;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: white;
+  transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Tablet (769px – 1024px) ─────────────────────────── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar { padding: 14px 30px; }
+  .logo { font-size: 44px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 0.75rem; padding: 4px 10px; }
+
+  main { padding: 240px 30px 80px; }
+
+  .hero-card { padding: 60px 40px; }
+  .hero-inner { gap: 50px; }
+  .hero-portrait { width: 260px; height: 320px; }
+  .hero-name { font-size: 4rem; }
+
+  .about-card { padding: 120px 80px 80px; }
+  .about-portrait { width: 350px; }
+
+  .skills-card { gap: 60px; }
+
+  .projects-card { padding: 120px 60px 80px; }
+  .project-item { gap: 40px; }
+
+  .social-card { gap: 80px; }
+
+  .inter-wave { height: 80px; }
+  .inter-wave--hero-about { height: 200px; }
+  .inter-wave--skills-projects { height: 80px; }
+}
+
+/* ── Mobile (≤ 768px) ────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Hamburger visible, nav links become fullscreen overlay */
+  .hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    z-index: 100;
+  }
+
+  .nav-links.active { display: flex; }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+  }
+
+  /* Main */
+  main { padding: 120px 16px 60px; }
+
+  /* Hero */
+  .hero-card { padding: 40px 20px; max-width: 100%; }
+  .hero-inner { flex-direction: column; gap: 30px; text-align: center; }
+  .hero-portrait { width: 200px; height: 250px; }
+  .hero-text { max-width: 100%; }
+  .hero-name { font-size: 3rem; }
+  .greeting { font-size: 1rem; }
+  .hero-tagline { font-size: 0.85rem; }
+
+  /* About */
+  .about-card { padding: 80px 20px 60px; }
+  .about-inner { flex-direction: column; gap: 30px; text-align: center; }
+  .about-portrait { width: 220px; align-self: center; }
+  .about-text p { text-indent: 0; }
+
+  /* Skills */
+  .skills-section { max-width: 100%; }
+  .skills-card { gap: 30px; padding: 80px 20px 40px; }
+
+  /* Projects */
+  .projects-card { padding: 80px 20px 60px; }
+  .project-item { flex-direction: column; gap: 20px; text-align: center; }
+
+  /* Find Me */
+  .find-me-section { max-width: 100%; }
+  .social-card { gap: 40px; padding: 80px 20px 40px; flex-wrap: wrap; }
+
+  /* Spacing */
+  .inter-wave { height: 50px; }
+  .inter-wave--hero-about { height: 80px; }
+  .inter-wave--skills-projects { height: 50px; }
+
+  /* Card labels */
+  .card-label { font-size: 1.4rem; }
+}

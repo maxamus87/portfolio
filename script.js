@@ -1,3 +1,19 @@
+// ── Hamburger menu toggle ──────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const navLinksEl = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinksEl.classList.toggle('active');
+});
+
+navLinksEl.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinksEl.classList.remove('active');
+  });
+});
+
 // ── Smooth centered scroll for nav links ──────────────────
 document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
