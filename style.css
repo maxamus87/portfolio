@@ -574,7 +574,7 @@ main {
   .nav-links { gap: 20px; }
   .nav-links a { font-size: 0.75rem; padding: 4px 10px; }
 
-  main { padding: 200px 30px 80px; }
+  main { padding: 120px 30px 80px; }
 
   /* Hero */
   .hero-card { padding: 60px 40px; max-width: 100%; }
@@ -582,11 +582,11 @@ main {
   .hero-portrait { width: 260px; height: 320px; }
   .hero-name { font-size: 4rem; }
 
-  /* About — stack vertically on tablet */
+  /* About — side by side with smaller portrait */
   .about-card { padding: 100px 40px 80px; }
-  .about-inner { flex-direction: column; text-align: center; gap: 30px; }
-  .about-portrait { width: 280px; align-self: center; }
-  .about-text p { text-indent: 0; max-width: 100%; }
+  .about-inner { flex-direction: row; gap: 40px; }
+  .about-portrait { width: 200px; flex-shrink: 0; }
+  .about-text p { max-width: 100%; }
 
   .skills-card { gap: 60px; }
 
