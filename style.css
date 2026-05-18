@@ -224,7 +224,7 @@ main {
   font-size: 1rem;
   line-height: 1.6;
   color: white;
-  text-indent: 40px;
+  text-indent: 30px;
   max-width: 600px;
 }
 
@@ -610,7 +610,8 @@ main {
   .about-inner { flex-direction: row; gap: 30px; }
   .about-portrait { width: 300px !important; flex-shrink: 0; }
   .about-text { flex: 1; min-width: 0; overflow: hidden; }
-  .about-text p { max-width: 100%; }
+  .about-text p { max-width: 100%;}
+  
 
   .skills-card { gap: 60px; }
 
@@ -679,7 +680,7 @@ main {
   .about-card { padding: 80px 60px 60px; }
   .about-inner { flex-direction: column; gap: 30px; text-align: center; }
   .about-portrait { width: 220px; align-self: center; }
-  
+  .about-text p { text-indent: 0; }
 
   /* Skills */
   .skills-section { max-width: 100%; }
