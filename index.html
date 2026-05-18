@@ -198,8 +198,18 @@
   <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Send an email">
     <div class="email-modal">
       <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-      <textarea id="emailMsg" placeholder="Write your message..." rows="6"></textarea>
-      <button class="send-btn" id="sendBtn">Send</button>
+      <form id="contactForm" action="https://formspree.io/f/xredbkbw" method="POST">
+        <label class="form-label">
+          Your email:
+          <input type="email" name="email" id="emailInput" placeholder="your@email.com" required />
+        </label>
+        <label class="form-label">
+          Your message:
+          <textarea name="message" id="emailMsg" placeholder="Write your message..." rows="6"></textarea>
+        </label>
+        <button type="submit" class="send-btn">Send</button>
+      </form>
+      <p class="form-success" id="formSuccess">Thanks! Your message has been sent.</p>
     </div>
   </div>
 

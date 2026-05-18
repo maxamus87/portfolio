@@ -41,6 +41,9 @@ const modalClose = document.getElementById('modalClose');
 const sendBtn = document.getElementById('sendBtn');
 const emailMsg = document.getElementById('emailMsg');
 
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+
 emailBtn.addEventListener('click', () => {
   modalOverlay.classList.add('active');
   emailMsg.focus();
@@ -56,10 +59,27 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
 
-sendBtn.addEventListener('click', () => {
-  if (emailMsg.value.trim()) {
-    closeModal();
-    emailMsg.value = '';
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = new FormData(contactForm);
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      contactForm.style.display = 'none';
+      formSuccess.style.display = 'block';
+      setTimeout(() => {
+        closeModal();
+        contactForm.style.display = 'flex';
+        formSuccess.style.display = 'none';
+        contactForm.reset();
+      }, 2500);
+    }
+  } catch (err) {
+    console.error('Form submission error:', err);
   }
 });
 
