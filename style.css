@@ -89,22 +89,6 @@ main {
 }
 
 
-/* Card corner wave decorations */
-.card-wave {
-  display: none;
-}
-
-/* Inter-section waves hidden */
-.inter-wave {
-  display: none;
-}
-
-.card-wave--findme {
-  top: 10px;
-  left: -10px;
-  width: 70px;
-  height: 200px;
-}
 
 /* Card label (top-left italic) */
 .card-label {
@@ -147,7 +131,6 @@ main {
 /* Hero→About wave: matches inter-wave--right since hero is also 1100px wide */
 .inter-wave--hero-about { padding-right: 380px; height: 480px; }
 
-.inter-wave svg { display: none; }
 
 /* ── Hero ────────────────────────────────────────────── */
 .hero-section {
@@ -627,7 +610,7 @@ main {
   .about-inner { flex-direction: row; gap: 30px; }
   .about-portrait { width: 300px !important; flex-shrink: 0; }
   .about-text { flex: 1; min-width: 0; overflow: hidden; }
-  .about-text p { max-width: 100%; text-indent: 0; }
+  .about-text p { max-width: 100%; }
 
   .skills-card { gap: 60px; }
 
@@ -696,7 +679,7 @@ main {
   .about-card { padding: 80px 60px 60px; }
   .about-inner { flex-direction: column; gap: 30px; text-align: center; }
   .about-portrait { width: 220px; align-self: center; }
-  .about-text p { text-indent: 0; }
+  
 
   /* Skills */
   .skills-section { max-width: 100%; }
