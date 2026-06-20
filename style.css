@@ -406,7 +406,7 @@ main {
 .skill-icon-box {
   width: 96px;
   height: 96px;
-  border: 0.1px solid rgba(0, 0, 0, 0.15);
+  border: none;
   border-radius: 0;
   overflow: visible;
   transform: translateZ(0);
@@ -438,7 +438,6 @@ main {
 
 .skill-icon-box:hover {
   background: #1e1e1e;
-  border-color: #555;
 }
 
 .skill-icon-box:hover svg,
@@ -547,7 +546,7 @@ main {
 .social-circle {
   width: 92px;
   height: 92px;
-  border: 0.1px solid rgba(0, 0, 0, 0.15);
+  border: none;
   border-radius: 0;
   display: flex;
   align-items: center;
@@ -560,7 +559,6 @@ main {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   background: #1e1e1e;
-  border-color: #555;
 }
 
 .social-circle svg {
@@ -580,7 +578,7 @@ main {
 
 .email-btn {
   background: rgba(0, 0, 0, 0.03);
-  border: 0.1px solid rgba(0, 0, 0, 0.15);
+  border: none;
   color: #1e1e1e;
   padding: 14px 50px;
   border-radius: 0;
@@ -594,7 +592,6 @@ main {
 .email-btn:hover {
   background: #1e1e1e;
   color: #f0ede6;
-  border-color: #555;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
