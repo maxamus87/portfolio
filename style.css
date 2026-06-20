@@ -470,6 +470,7 @@ main {
 /* ── Resume ──────────────────────────────────────────── */
 .resume-card {
   padding: 20px 0 0;
+  position: relative;
 }
 
 .resume-frame {
@@ -477,6 +478,17 @@ main {
   height: 800px;
   border: none;
   display: block;
+}
+
+.resume-touch-overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .resume-touch-overlay { display: block; }
 }
 
 /* ── Projects ────────────────────────────────────────── */

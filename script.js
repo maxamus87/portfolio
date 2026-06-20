@@ -85,14 +85,19 @@ document.addEventListener('keydown', (e) => {
 
 // Swipe navigation
 let touchStartX = 0;
-slidesContainer.addEventListener('touchstart', (e) => {
-  touchStartX = e.touches[0].clientX;
-}, { passive: true });
 
-slidesContainer.addEventListener('touchend', (e) => {
-  const diff = touchStartX - e.changedTouches[0].clientX;
-  if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
-}, { passive: true });
+function addSwipe(el) {
+  el.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  el.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+  }, { passive: true });
+}
+
+addSwipe(slidesContainer);
+addSwipe(document.querySelector('.resume-touch-overlay'));
 
 // ── Email modal ────────────────────────────────────────────
 const emailBtn = document.getElementById('emailBtn');
