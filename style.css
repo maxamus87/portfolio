@@ -570,10 +570,16 @@ main {
 
 .social-link:hover .social-circle svg { color: white; }
 .social-link:hover .social-circle img { filter: brightness(0) invert(1); }
+.social-link:hover span { opacity: 1; }
 
 .social-link span {
-  font-size: 1.15rem;
+  font-size: 0.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: #1e1e1e;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .email-btn {
