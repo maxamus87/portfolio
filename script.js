@@ -132,5 +132,5 @@ function closeModal() {
   modalOverlay.classList.add('closing');
   setTimeout(() => {
     modalOverlay.classList.remove('active', 'closing');
-  }, 500);
+  }, 900);
 }

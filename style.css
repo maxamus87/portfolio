@@ -623,11 +623,11 @@ main {
 }
 
 .modal-overlay.active .email-modal {
-  animation: modalFadeUp 0.7s ease forwards;
+  animation: modalFadeUp 0.9s ease forwards;
 }
 
 .modal-overlay.closing .email-modal {
-  animation: modalFadeDown 0.5s ease forwards;
+  animation: modalFadeDown 0.9s ease forwards;
 }
 
 .email-modal {
