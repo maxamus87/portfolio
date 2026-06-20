@@ -600,6 +600,7 @@ main {
   color: #1e1e1e;
   padding: 14px 50px;
   white-space: nowrap;
+  align-self: center;
   border-radius: 0;
   font-family: 'Josefin Sans', "Century Gothic", "AppleGothic", sans-serif;
   font-size: 1.15rem;
