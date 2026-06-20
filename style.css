@@ -617,8 +617,17 @@ main {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes modalFadeDown {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(24px); }
+}
+
 .modal-overlay.active .email-modal {
-  animation: modalFadeUp 0.45s ease forwards;
+  animation: modalFadeUp 0.7s ease forwards;
+}
+
+.modal-overlay.closing .email-modal {
+  animation: modalFadeDown 0.5s ease forwards;
 }
 
 .email-modal {

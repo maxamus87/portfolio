@@ -129,5 +129,8 @@ contactForm.addEventListener('submit', async (e) => {
 });
 
 function closeModal() {
-  modalOverlay.classList.remove('active');
+  modalOverlay.classList.add('closing');
+  setTimeout(() => {
+    modalOverlay.classList.remove('active', 'closing');
+  }, 500);
 }
