@@ -109,7 +109,7 @@ const formSuccess = document.getElementById('formSuccess');
 
 emailBtn.addEventListener('click', () => {
   modalOverlay.classList.add('active');
-  emailMsg.focus();
+  document.getElementById('emailInput').focus();
 });
 
 modalClose.addEventListener('click', closeModal);
