@@ -298,24 +298,7 @@ main {
 }
 
 .carousel-btn {
-  background: transparent;
-  border: none;
-  color: #1e1e1e;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.15em;
-  cursor: pointer;
-  padding: 6px 12px;
-  transition: color 0.25s ease, opacity 0.25s ease;
-}
-
-.carousel-btn:hover:not(:disabled) {
-  color: black;
-}
-
-.carousel-btn:disabled {
-  opacity: 0.15;
-  cursor: default;
+  display: none;
 }
 
 .carousel-dots {
@@ -824,7 +807,6 @@ main {
   .carousel-nav { gap: 10px; }
   .carousel-dots { gap: 10px; }
   .carousel-dot { font-size: 0.55rem; letter-spacing: 0.1em; }
-  .carousel-btn { display: none; }
 
   .hero-card { padding: 20px 24px 80px; }
   .hero-inner { flex-direction: column; gap: 30px; text-align: center; }
