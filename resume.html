@@ -6,15 +6,15 @@
   <title>Max Messick — Resume</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
     html { scroll-behavior: smooth; }
 
     body {
-      background: black;
-      color: white;
-      font-family: "Century Gothic", "AppleGothic", sans-serif;
+      background: transparent;
+      color: black;
+      font-family: 'Josefin Sans', "Century Gothic", "AppleGothic", sans-serif;
       font-weight: 300;
       min-height: 100vh;
       display: flex;
@@ -40,7 +40,7 @@
       border-radius: 5px;
       color: white;
       text-decoration: none;
-      font-family: "Century Gothic", "AppleGothic", sans-serif;
+      font-family: 'Josefin Sans', "Century Gothic", "AppleGothic", sans-serif;
       font-size: 1rem;
       font-weight: 300;
       padding: 10px 24px;
@@ -52,34 +52,34 @@
 
     /* Resume document */
     .resume-doc {
-      background: black;
-      color: white;
+      background: white;
+      color: black;
       width: 100%;
       max-width: 860px;
       padding: 52px 52px 64px;
-      border: 1px solid white;
+      border: none;
     }
 
     /* Header */
     .resume-header {
       margin-bottom: 32px;
       padding-bottom: 16px;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid black;
     }
 
     .resume-name {
-      font-family: 'Caveat', cursive;
+      font-family: 'Josefin Sans', sans-serif;
       font-size: 3rem;
       font-weight: 600;
       letter-spacing: 0.02em;
       line-height: 1;
-      color: white;
+      color: black;
       margin-bottom: 6px;
     }
 
     .resume-title {
       font-size: 0.9rem;
-      color: #aaa;
+      color: #555;
       font-weight: 300;
       letter-spacing: 0.04em;
     }
@@ -93,12 +93,12 @@
 
     /* Section headings */
     .resume-section-title {
-      font-family: 'Caveat', cursive;
+      font-family: 'Josefin Sans', sans-serif;
       font-size: 1.2rem;
       font-weight: 600;
       letter-spacing: 0.06em;
-      color: white;
-      border-bottom: 1px solid white;
+      color: black;
+      border-bottom: 1px solid black;
       padding-bottom: 4px;
       margin-bottom: 14px;
       margin-top: 28px;
@@ -114,41 +114,41 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #888;
+      color: #666;
       margin-bottom: 2px;
       margin-top: 12px;
     }
 
     .detail-label:first-child { margin-top: 0; }
 
-    .detail-value { color: #ccc; font-size: 0.82rem; }
+    .detail-value { color: #333; font-size: 0.82rem; }
 
     .detail-link {
-      color: white;
+      color: black;
       text-decoration: underline;
       font-size: 0.82rem;
     }
 
-    .detail-link:hover { color: #aaa; }
+    .detail-link:hover { color: #555; }
 
     /* Skills with progress bars */
     .skill-row { margin-bottom: 12px; }
 
     .skill-name {
       font-size: 0.8rem;
-      color: #ccc;
+      color: #333;
       margin-bottom: 5px;
     }
 
     .skill-bar {
       height: 4px;
-      background: #333;
+      background: #ccc;
       overflow: hidden;
     }
 
     .skill-fill {
       height: 100%;
-      background: white;
+      background: black;
     }
 
     /* Right column */
@@ -166,23 +166,23 @@
     .job-title {
       font-weight: 600;
       font-size: 0.88rem;
-      color: white;
+      color: black;
     }
 
     .job-location {
       font-size: 0.76rem;
-      color: #888;
+      color: #666;
       text-align: right;
     }
 
     .job-dates {
       font-size: 0.76rem;
-      color: #888;
+      color: #666;
       margin-bottom: 6px;
     }
 
     .job-desc {
-      color: #ccc;
+      color: #333;
       font-size: 0.82rem;
       line-height: 1.75;
       margin-bottom: 20px;
@@ -200,14 +200,14 @@
     .edu-degree {
       font-weight: 600;
       font-size: 0.88rem;
-      color: white;
+      color: black;
     }
 
-    .edu-location { font-size: 0.76rem; color: #888; }
-    .edu-dates { font-size: 0.76rem; color: #888; margin-bottom: 6px; }
+    .edu-location { font-size: 0.76rem; color: #666; }
+    .edu-dates { font-size: 0.76rem; color: #666; margin-bottom: 6px; }
 
     .edu-desc {
-      color: #ccc;
+      color: #333;
       font-size: 0.82rem;
       line-height: 1.75;
       margin-bottom: 20px;
@@ -240,10 +240,6 @@
   </style>
 </head>
 <body>
-
-  <div class="back-link">
-    <a href="index.html">&#8592; Back to Portfolio</a>
-  </div>
 
   <div class="resume-doc">
 

@@ -1,46 +1,93 @@
-// ── Hamburger menu toggle ──────────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const navLinksEl = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinksEl.classList.toggle('active');
-});
-
-navLinksEl.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navLinksEl.classList.remove('active');
+// ── Auto-size resume iframe ────────────────────────────────
+const resumeFrame = document.querySelector('.resume-frame');
+if (resumeFrame) {
+  resumeFrame.addEventListener('load', () => {
+    const doc = resumeFrame.contentDocument || resumeFrame.contentWindow.document;
+    resumeFrame.style.height = doc.documentElement.scrollHeight + 'px';
   });
-});
+}
 
-// ── Smooth centered scroll for nav links ──────────────────
-document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (!target) return;
-    e.preventDefault();
+// ── Carousel ───────────────────────────────────────────────
+const slidesContainer = document.getElementById('carouselSlides');
+const slides = [...document.querySelectorAll('.carousel-slide')];
+const dots = [...document.querySelectorAll('.carousel-dot')];
+const prevBtn = document.getElementById('carouselPrev');
+const nextBtn = document.getElementById('carouselNext');
 
-    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-    const visibleHeight = window.innerHeight - navbarHeight;
-    const cardHeight = target.offsetHeight;
+let current = 0;
+let animating = false;
 
-    // Center the card in the visible space; if card is taller just clear the navbar
-    const offset = cardHeight < visibleHeight
-      ? Math.round((visibleHeight - cardHeight) / 2)
-      : 0;
+const ANIM_SELECTORS = [
+  '.greeting', '.hero-name', '.hero-tagline',
+  '.about-text',
+  '.skill-icon-box',
+  '.project-item',
+  '.resume-frame',
+  '.social-link', '.email-btn'
+].join(',');
 
-    const scrollTo = target.getBoundingClientRect().top + window.scrollY - navbarHeight - offset;
-    window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+
+function goTo(index) {
+  if (animating || index === current || index < 0 || index >= slides.length) return;
+  animating = true;
+  current = index;
+
+  const enterSlide = slides[current];
+
+  // Hide all animated elements before the slide becomes visible
+  enterSlide.querySelectorAll(ANIM_SELECTORS + ', .hero-portrait, .about-portrait').forEach(el => { el.style.opacity = '0'; });
+
+  // CSS classes drive all positioning:
+  //   slides left of current  → 'slide-left' (translateX(-100%))
+  //   current slide           → 'active'      (position: relative, translateX(0))
+  //   slides right of current → no class      (translateX(100%) from base CSS)
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active', 'slide-left', 'card-enter');
+    if (i < current) slide.classList.add('slide-left');
+    else if (i === current) slide.classList.add('active');
   });
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      enterSlide.querySelectorAll(ANIM_SELECTORS + ', .hero-portrait, .about-portrait').forEach(el => {
+        el.style.opacity = '';
+        el.style.animation = 'none';
+      });
+      void enterSlide.offsetWidth;
+      enterSlide.querySelectorAll(ANIM_SELECTORS + ', .hero-portrait, .about-portrait').forEach(el => {
+        el.style.animation = '';
+      });
+      enterSlide.classList.add('card-enter');
+    });
+  });
+
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  prevBtn.disabled = current === 0;
+  nextBtn.disabled = current === slides.length - 1;
+
+  setTimeout(() => { animating = false; }, 910);
+}
+
+// Init — slide 0 already has 'active' in HTML, height is natural
+slides[0].classList.add('card-enter');
+prevBtn.disabled = true;
+nextBtn.disabled = slides.length <= 1;
+
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') goTo(current - 1);
+  if (e.key === 'ArrowRight') goTo(current + 1);
 });
 
+// ── Email modal ────────────────────────────────────────────
 const emailBtn = document.getElementById('emailBtn');
 const modalOverlay = document.getElementById('modalOverlay');
 const modalClose = document.getElementById('modalClose');
-const sendBtn = document.getElementById('sendBtn');
 const emailMsg = document.getElementById('emailMsg');
-
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
@@ -50,11 +97,9 @@ emailBtn.addEventListener('click', () => {
 });
 
 modalClose.addEventListener('click', closeModal);
-
 modalOverlay.addEventListener('click', (e) => {
   if (e.target === modalOverlay) closeModal();
 });
-
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
