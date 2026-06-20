@@ -824,6 +824,7 @@ main {
   .carousel-nav { gap: 10px; }
   .carousel-dots { gap: 10px; }
   .carousel-dot { font-size: 0.55rem; letter-spacing: 0.1em; }
+  .carousel-btn { display: none; }
 
   .hero-card { padding: 20px 24px 80px; }
   .hero-inner { flex-direction: column; gap: 30px; text-align: center; }
