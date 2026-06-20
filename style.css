@@ -845,6 +845,7 @@ main {
   .project-item { flex-direction: column; gap: 20px; text-align: center; }
 
   .social-card { padding: 80px 20px; }
-  .social-content { gap: 40px; flex-wrap: wrap; }
+  .social-content { gap: 40px; }
+  .email-btn { width: fit-content; min-width: 200px; }
 
 }
