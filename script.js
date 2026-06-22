@@ -97,7 +97,16 @@ function addSwipe(el) {
 }
 
 addSwipe(slidesContainer);
-addSwipe(document.querySelector('.resume-touch-overlay'));
+
+// Add swipe to iframe content once loaded (same-origin allows this)
+const resumeFrameEl = document.querySelector('.resume-frame');
+if (resumeFrameEl) {
+  resumeFrameEl.addEventListener('load', () => {
+    try {
+      addSwipe(resumeFrameEl.contentDocument.body);
+    } catch(e) {}
+  });
+}
 
 // ── Email modal ────────────────────────────────────────────
 const emailBtn = document.getElementById('emailBtn');
