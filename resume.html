@@ -6,14 +6,14 @@
   <title>Max Messick — Resume</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
     html { scroll-behavior: smooth; }
 
     body {
       background: transparent;
-      color: black;
+      color: #1e1e1e;
       font-family: 'Josefin Sans', "Century Gothic", "AppleGothic", sans-serif;
       font-weight: 300;
       min-height: 100vh;
@@ -23,37 +23,9 @@
       padding: 60px 24px 80px;
     }
 
-    /* Back link */
-    .back-link {
-      align-self: flex-start;
-      max-width: 860px;
-      width: 100%;
-      margin-bottom: 32px;
-    }
-
-    .back-link a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      border: 1px solid white;
-      border-radius: 5px;
-      color: white;
-      text-decoration: none;
-      font-family: 'Josefin Sans', "Century Gothic", "AppleGothic", sans-serif;
-      font-size: 1rem;
-      font-weight: 300;
-      padding: 10px 24px;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .back-link a:hover { background: white; color: black; }
-
-    /* Resume document */
     .resume-doc {
-      background: white;
-      color: black;
+      background: transparent;
+      color: #1e1e1e;
       width: 100%;
       max-width: 860px;
       padding: 52px 52px 64px;
@@ -62,18 +34,18 @@
 
     /* Header */
     .resume-header {
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       padding-bottom: 16px;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #1e1e1e;
     }
 
     .resume-name {
       font-family: 'Josefin Sans', sans-serif;
       font-size: 3rem;
-      font-weight: 600;
+      font-weight: 300;
       letter-spacing: 0.02em;
       line-height: 1;
-      color: black;
+      color: #1e1e1e;
       margin-bottom: 6px;
     }
 
@@ -82,6 +54,27 @@
       color: #555;
       font-weight: 300;
       letter-spacing: 0.04em;
+    }
+
+    .resume-contact {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      color: #555;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+    }
+
+    /* Profile */
+    .resume-profile {
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(30,30,30,0.15);
+    }
+
+    .resume-profile p {
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: #333;
     }
 
     /* Two-column layout */
@@ -94,11 +87,12 @@
     /* Section headings */
     .resume-section-title {
       font-family: 'Josefin Sans', sans-serif;
-      font-size: 1.2rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.06em;
-      color: black;
-      border-bottom: 1px solid black;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #1e1e1e;
+      border-bottom: 1px solid #1e1e1e;
       padding-bottom: 4px;
       margin-bottom: 14px;
       margin-top: 28px;
@@ -110,45 +104,39 @@
     .left-col { font-size: 0.82rem; line-height: 1.7; }
 
     .detail-label {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #666;
+      color: #888;
       margin-bottom: 2px;
       margin-top: 12px;
     }
 
     .detail-label:first-child { margin-top: 0; }
-
     .detail-value { color: #333; font-size: 0.82rem; }
 
     .detail-link {
-      color: black;
+      color: #1e1e1e;
       text-decoration: underline;
       font-size: 0.82rem;
     }
 
     .detail-link:hover { color: #555; }
 
-    /* Skills with progress bars */
-    .skill-row { margin-bottom: 12px; }
-
-    .skill-name {
-      font-size: 0.8rem;
+    /* Skills list */
+    .skill-tag {
+      display: inline-block;
+      font-size: 0.72rem;
       color: #333;
-      margin-bottom: 5px;
+      letter-spacing: 0.04em;
+      padding: 3px 0;
+      line-height: 1.8;
     }
 
-    .skill-bar {
-      height: 4px;
-      background: #ccc;
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      height: 100%;
-      background: black;
+    .skill-tag::before {
+      content: '— ';
+      color: #aaa;
     }
 
     /* Right column */
@@ -166,76 +154,85 @@
     .job-title {
       font-weight: 600;
       font-size: 0.88rem;
-      color: black;
+      color: #1e1e1e;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
-    .job-location {
-      font-size: 0.76rem;
-      color: #666;
-      text-align: right;
+    .job-company {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 2px;
     }
 
     .job-dates {
-      font-size: 0.76rem;
-      color: #666;
-      margin-bottom: 6px;
+      font-size: 0.74rem;
+      color: #888;
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
     }
 
     .job-desc {
       color: #333;
       font-size: 0.82rem;
       line-height: 1.75;
-      margin-bottom: 20px;
+      margin-bottom: 6px;
     }
 
-    .edu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 2px;
+    .job-bullets {
+      list-style: none;
+      margin-bottom: 24px;
     }
+
+    .job-bullets li {
+      font-size: 0.82rem;
+      color: #444;
+      line-height: 1.75;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .job-bullets li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #aaa;
+    }
+
+    .edu-entry { margin-bottom: 20px; }
 
     .edu-degree {
       font-weight: 600;
       font-size: 0.88rem;
-      color: black;
+      color: #1e1e1e;
     }
 
-    .edu-location { font-size: 0.76rem; color: #666; }
-    .edu-dates { font-size: 0.76rem; color: #666; margin-bottom: 6px; }
-
-    .edu-desc {
-      color: #333;
+    .edu-school {
       font-size: 0.82rem;
-      line-height: 1.75;
-      margin-bottom: 20px;
+      color: #555;
+      margin-bottom: 2px;
     }
 
-    /* ── Tablet ── */
+    .edu-dates {
+      font-size: 0.74rem;
+      color: #888;
+      letter-spacing: 0.04em;
+    }
+
+    /* Tablet */
     @media (max-width: 768px) {
       body { padding: 40px 24px 60px; }
-
       .resume-doc { padding: 40px 32px 48px; }
-
       .resume-name { font-size: 2.2rem; }
-
-      .resume-body {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
+      .resume-body { grid-template-columns: 1fr; gap: 32px; }
     }
 
-    /* ── Mobile ── */
+    /* Mobile */
     @media (max-width: 480px) {
       body { padding: 30px 16px 50px; }
-
       .resume-doc { padding: 32px 24px 40px; }
-
       .resume-name { font-size: 1.8rem; }
-
-      .back-link a { font-size: 0.85rem; padding: 8px 16px; }
     }
   </style>
 </head>
@@ -245,8 +242,13 @@
 
     <header class="resume-header">
       <h1 class="resume-name">Max Messick</h1>
-      <p class="resume-title">Frontend Developer &amp; Designer</p>
+      <p class="resume-title">Junior Web Developer</p>
+      <p class="resume-contact">Columbus, Ohio &nbsp;&middot;&nbsp; (614) 749-5434 &nbsp;&middot;&nbsp; maxamus87@gmail.com</p>
     </header>
+
+    <section class="resume-profile">
+      <p>Creative and curious Junior Web Developer with a passion for building intuitive, visually compelling web experiences. With over a decade of experience in customer service and technical support, I bring strong communication skills, a natural instinct for problem-solving, and a deep appreciation for the human side of technology. A lifelong computer enthusiast — having built and maintained my own systems — I recently completed a web development bootcamp at Color Coded Labs and have been channeling my creativity and technical curiosity into projects that balance aesthetics with functionality. My background as a digital illustrator gives me a unique eye for design that I carry into everything I build. Based in Columbus, Ohio, I am eager to grow as a developer and contribute to a team that values both craft and collaboration.</p>
+    </section>
 
     <div class="resume-body">
 
@@ -255,59 +257,42 @@
 
         <h2 class="resume-section-title">Details</h2>
 
-        <p class="detail-label">Address</p>
+        <p class="detail-label">Location</p>
         <p class="detail-value">Columbus, Ohio</p>
 
         <p class="detail-label">Phone</p>
-        <p class="detail-value">Your phone number</p>
+        <p class="detail-value">(614) 749-5434</p>
 
         <p class="detail-label">Email</p>
-        <p class="detail-value">your@email.com</p>
+        <p class="detail-value">maxamus87@gmail.com</p>
 
         <h2 class="resume-section-title">Links</h2>
-        <a class="detail-link" href="#">LinkedIn</a>
+        <a class="detail-link" href="https://www.linkedin.com/in/max-messick-3bb639157">LinkedIn</a><br />
+        <a class="detail-link" href="https://github.com/maxamus87">GitHub</a>
 
-        <h2 class="resume-section-title">Skills</h2>
+        <h2 class="resume-section-title">Technical Skills</h2>
+        <div>
+          <div class="skill-tag">HTML5</div><br />
+          <div class="skill-tag">CSS3</div><br />
+          <div class="skill-tag">JavaScript</div><br />
+          <div class="skill-tag">React</div><br />
+          <div class="skill-tag">Vite</div><br />
+          <div class="skill-tag">Bootstrap</div><br />
+          <div class="skill-tag">Figma</div><br />
+          <div class="skill-tag">Bash</div><br />
+          <div class="skill-tag">Claude Code</div><br />
+          <div class="skill-tag">Digital Illustration</div><br />
+          <div class="skill-tag">Windows</div>
+        </div>
 
-        <div class="skill-row">
-          <p class="skill-name">Angular</p>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-        </div>
-        <div class="skill-row">
-          <p class="skill-name">HTML/CSS/JavaScript</p>
-          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-        </div>
-        <div class="skill-row">
-          <p class="skill-name">Ionic Framework</p>
-          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-        </div>
-        <div class="skill-row">
-          <p class="skill-name">Cypress</p>
-          <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
-        </div>
-        <div class="skill-row">
-          <p class="skill-name">Agile Project Management</p>
-          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-        </div>
-        <div class="skill-row">
-          <p class="skill-name">Git</p>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-        </div>
-        <div class="skill-row">
-          <p class="skill-name">SQL</p>
-          <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
-        </div>
-        <div class="skill-row">
-          <p class="skill-name">Cybersecurity Training</p>
-          <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
-        </div>
-        <div class="skill-row">
-          <p class="skill-name">Penetration testing</p>
-          <div class="skill-bar"><div class="skill-fill" style="width:50%"></div></div>
-        </div>
-        <div class="skill-row">
-          <p class="skill-name">Web security</p>
-          <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+        <h2 class="resume-section-title">Professional Skills</h2>
+        <div>
+          <div class="skill-tag">Customer Service</div><br />
+          <div class="skill-tag">Technical Support</div><br />
+          <div class="skill-tag">Communication</div><br />
+          <div class="skill-tag">Data Tracking</div><br />
+          <div class="skill-tag">Microsoft Office</div><br />
+          <div class="skill-tag">Problem-Solving</div>
         </div>
 
       </div>
@@ -318,41 +303,50 @@
         <h2 class="resume-section-title">Employment History</h2>
 
         <div class="job-header">
-          <span class="job-title">Senior Frontend Developer, [Company]</span>
-          <span class="job-location">Zurich, Switzerland &amp;<br>Bratislava, Slovakia</span>
+          <span class="job-title">Call Center Specialist</span>
         </div>
-        <p class="job-dates">Jul 2017 — Present</p>
-        <p class="job-desc">A fin-tech company focusing on sustainable investing with an online web application. Responsible for Frontend development of this application in Angular. Also a SCRUM master for the development team.<br><br>During the past 5 years in the company, had the chance to experience and improve in a lot of areas, such as ownership, project creation, leadership, development, and more.</p>
+        <p class="job-company">Columbus Metropolitan Library</p>
+        <p class="job-dates">Nov 2021 — Mar 2026</p>
+        <p class="job-desc">Assisted customers via phone addressing reference and account inquiries. Utilized technical skills to troubleshoot issues and provide optimal resources. Engaged with patrons through website chat, offering information on events and classes. Leveraged Microsoft Office to track data for customers and staff.</p>
+        <ul class="job-bullets">
+          <li>Responded to 100+ customer inquiries daily, ensuring accurate information delivery.</li>
+          <li>Streamlined data tracking, improving response time by 20%.</li>
+          <li>Enhanced customer engagement through proactive chat assistance.</li>
+          <li>Collaborated with teams to update library event information regularly.</li>
+        </ul>
 
         <div class="job-header">
-          <span class="job-title">UX Designer, [Company]</span>
-          <span class="job-location">Brno, Czech Republic</span>
+          <span class="job-title">Customer Services Associate</span>
         </div>
-        <p class="job-dates">2016 — 2017</p>
-        <p class="job-desc">UX design role focused on interface design and user experience.</p>
-
-        <div class="job-header">
-          <span class="job-title">Frontend Developer &amp; Designer, [Company]</span>
-          <span class="job-location">Brno, Czech Republic</span>
-        </div>
-        <p class="job-dates">2015 — 2016</p>
-        <p class="job-desc">Frontend development and design work for web projects.</p>
+        <p class="job-company">Columbus Metropolitan Library</p>
+        <p class="job-dates">Jun 2017 — Nov 2021</p>
+        <p class="job-desc">Assisted customers with reference inquiries and efficiently located materials. Leveraged tech expertise to troubleshoot and support self-service technology. Maintained collection presentation for optimal customer access and remained approachable for customers and staff.</p>
+        <ul class="job-bullets">
+          <li>Enhanced customer satisfaction through prompt responses to inquiries.</li>
+          <li>Streamlined technology support processes, reducing wait times.</li>
+          <li>Improved collection organization, increasing ease of access.</li>
+          <li>Fostered a welcoming environment for all patrons.</li>
+        </ul>
 
         <h2 class="resume-section-title">Education</h2>
 
-        <div class="edu-header">
-          <span class="edu-degree">Master, [University]</span>
-          <span class="edu-location">Brno, Czech Republic</span>
+        <div class="edu-entry">
+          <p class="edu-degree">Web Development Bootcamp</p>
+          <p class="edu-school">Color Coded Labs — Cohort 9</p>
+          <p class="edu-dates">Apr 2026 — Aug 2026</p>
         </div>
-        <p class="edu-dates">2015 — 2017</p>
-        <p class="edu-desc">Studies: Applied Computer Science — Service Science, Management, and Engineering.<br>Thesis: User Interface design for certificate operations with Network Security Services.</p>
 
-        <div class="edu-header">
-          <span class="edu-degree">Bachelor, [University]</span>
-          <span class="edu-location">Brno, Czech Republic</span>
+        <div class="edu-entry">
+          <p class="edu-degree">Some College</p>
+          <p class="edu-school">Columbus State Community College</p>
+          <p class="edu-dates">2014 — 2017</p>
         </div>
-        <p class="edu-dates">2011 — 2015</p>
-        <p class="edu-desc">Studies: Applied Computer Science.</p>
+
+        <div class="edu-entry">
+          <p class="edu-degree">GED</p>
+          <p class="edu-school">Oakstone Academy High School</p>
+          <p class="edu-dates">2010 — 2013</p>
+        </div>
 
       </div>
     </div>
