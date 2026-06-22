@@ -64,6 +64,8 @@ function goTo(index) {
   dots.forEach((d, i) => d.classList.toggle('active', i === current));
   prevBtn.disabled = current === 0;
   nextBtn.disabled = current === slides.length - 1;
+  arrowPrev.disabled = current === 0;
+  arrowNext.disabled = current === slides.length - 1;
 
   setTimeout(() => { animating = false; }, 910);
 }
@@ -76,6 +78,12 @@ nextBtn.disabled = slides.length <= 1;
 prevBtn.addEventListener('click', () => goTo(current - 1));
 nextBtn.addEventListener('click', () => goTo(current + 1));
 dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+const arrowPrev = document.getElementById('arrowPrev');
+const arrowNext = document.getElementById('arrowNext');
+arrowPrev.addEventListener('click', () => goTo(current - 1));
+arrowNext.addEventListener('click', () => goTo(current + 1));
+arrowPrev.disabled = true;
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
