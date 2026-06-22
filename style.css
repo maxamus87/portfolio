@@ -226,8 +226,8 @@ main {
 }
 
 .hero-portrait {
-  width: 350px;
-  margin-top: -130px;
+  width: 250px;
+  margin-top: -80px;
 }
 
 .hero-text { max-width: 400px; }
@@ -825,7 +825,7 @@ main {
 
   .hero-card { padding: 140px 80px; }
   .hero-inner { gap: 50px; justify-content: center; }
-  .hero-portrait { width: 300px; }
+  .hero-portrait { width: 250px; }
   .hero-name { font-size: 4rem; }
 
   .about-card { padding: 140px 120px; }
@@ -858,7 +858,7 @@ main {
 
   .hero-card { padding: 20px 24px 80px; }
   .hero-inner { flex-direction: column; gap: 30px; text-align: center; }
-  .hero-portrait { width: 280px; margin-top: 0; }
+  .hero-portrait { width: 220px; margin-top: 0; }
   .hero-text { max-width: 100%; }
   .hero-name { font-size: 3rem; }
   .greeting { font-size: 1rem; }
