@@ -64,6 +64,11 @@ body {
   justify-content: center;
 }
 
+@keyframes logoFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .logo {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 130px;
@@ -72,6 +77,8 @@ body {
   text-decoration: none;
   line-height: 1;
   letter-spacing: 0.12em;
+  animation: logoFadeIn 1s ease both;
+  animation-delay: 0.3s;
 }
 
 /* ── Main ────────────────────────────────────────────── */
@@ -88,18 +95,31 @@ main {
   position: relative;
   z-index: 1;
   overflow: visible;
-  background: #faf8f4;
+  background: #ede9e1;
   margin-bottom: 0;
+  --mouse-x: -9999px;
+  --mouse-y: -9999px;
 }
 
 .dark-card {
-  background: #faf8f4;
+  background: #ede9e1;
   border: none;
   border-radius: 0;
   position: relative;
   z-index: 1;
   overflow: visible;
   margin-bottom: 0;
+  --mouse-x: -9999px;
+  --mouse-y: -9999px;
+}
+
+.card::after, .dark-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.08), transparent 40%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .card::before,
@@ -204,7 +224,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 30px;
   position: relative;
   z-index: 1;
 }
@@ -226,7 +246,7 @@ main {
 }
 
 .hero-portrait {
-  width: 250px;
+  width: 350px;
   margin-top: -80px;
 }
 
@@ -292,6 +312,10 @@ main {
   transform: translateX(-100%);
 }
 
+.carousel-slide.slide-exit-right {
+  transform: translateX(100%);
+}
+
 .carousel-nav {
   display: flex;
   align-items: center;
@@ -336,6 +360,16 @@ main {
   display: flex;
   gap: 28px;
   align-items: center;
+  position: relative;
+}
+
+.dot-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  background: #1e1e1e;
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .carousel-dot {
@@ -360,7 +394,7 @@ main {
 
 .carousel-dot.active {
   color: #1e1e1e;
-  border-bottom-color: #1e1e1e;
+  border-bottom-color: transparent;
 }
 
 /* ── Section animation delays ────────────────────────── */
@@ -521,10 +555,10 @@ main {
   justify-content: center;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #f0ede6;
+  color: #1e1e1e;
   letter-spacing: 0.03em;
   text-align: center;
-  background: #1e1e1e;
+  background: rgba(0, 0, 0, 0.03);
   padding: 16px;
   position: relative;
   top: 0;
@@ -534,8 +568,8 @@ main {
 
 .project-logo:hover {
   top: -3px;
-  background: rgba(0, 0, 0, 0.03);
-  color: #1e1e1e;
+  background: #1e1e1e;
+  color: #f0ede6;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
@@ -552,17 +586,42 @@ main {
 
 .project-logo--howcan {
   font-family: 'Caveat', cursive;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   padding: 8px;
+}
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 600px;
 }
 
 .project-item p {
   font-size: 1rem;
   line-height: 1.85;
   color: #1e1e1e;
-  max-width: 600px;
+}
+
+.project-link {
+  align-self: flex-start;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #1e1e1e;
+  text-decoration: none;
+  border-bottom: 0.1px solid rgba(0,0,0,0.3);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.project-link:hover {
+  color: #555;
+  border-color: #555;
 }
 
 .project-divider { display: none; }
@@ -679,7 +738,7 @@ main {
 }
 
 .email-modal {
-  background: #faf8f4;
+  background: #ede9e1;
   border: 0.1px solid rgba(0,0,0,0.15);
   border-radius: 0;
   padding: 40px 36px 32px;
@@ -799,7 +858,7 @@ main {
 
 .send-btn:hover {
   background: #1e1e1e;
-  color: #faf8f4;
+  color: #ede9e1;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
@@ -825,7 +884,7 @@ main {
 
   .hero-card { padding: 140px 80px; }
   .hero-inner { gap: 50px; justify-content: center; }
-  .hero-portrait { width: 250px; }
+  .hero-portrait { width: 300px; }
   .hero-name { font-size: 4rem; }
 
   .about-card { padding: 140px 120px; }
@@ -835,7 +894,7 @@ main {
   .about-text p { max-width: 100%; }
 
   .skills-card { padding: 120px 80px 80px; }
-  .skills-content { grid-template-columns: repeat(5, 96px); gap: 36px; }
+  .skills-content { grid-template-columns: repeat(5, 96px); gap: 16px; }
 
   .projects-card { padding: 80px 100px 100px; }
   .project-item { gap: 40px; }
