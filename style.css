@@ -934,8 +934,8 @@ main {
 
 /* ── Mobile (≤ 768px) ────────────────────────────────── */
 @media (max-width: 768px) {
-  .navbar { padding: 60px 24px 18px; }
-  .logo { font-size: 60px; }
+  .navbar { padding: 32px 24px 12px; }
+  .logo { font-size: 36px; letter-spacing: 0.08em; }
 
   main { padding: 40px 16px 60px; }
 
