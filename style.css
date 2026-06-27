@@ -58,7 +58,7 @@ body {
 /* ── Navbar ──────────────────────────────────────────── */
 .navbar {
   background: transparent;
-  padding: 120px 18px 18px;
+  padding: 120px 18px 40px;
   display: flex;
   align-items: center;
   justify-content: center;
