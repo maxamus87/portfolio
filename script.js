@@ -156,12 +156,21 @@ function addSwipe(el) {
 
 addSwipe(slidesContainer);
 
-// Add swipe to iframe content once loaded (same-origin allows this)
+// Add swipe to iframe content once loaded — simpler version without scroll-lock
+// so the resume can still scroll vertically
 const resumeFrameEl = document.querySelector('.resume-frame');
 if (resumeFrameEl) {
   resumeFrameEl.addEventListener('load', () => {
     try {
-      addSwipe(resumeFrameEl.contentDocument.body);
+      const body = resumeFrameEl.contentDocument.body;
+      let iframeStartX = 0;
+      body.addEventListener('touchstart', (e) => {
+        iframeStartX = e.touches[0].clientX;
+      }, { passive: true });
+      body.addEventListener('touchend', (e) => {
+        const diff = iframeStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+      }, { passive: true });
     } catch(e) {}
   });
 }
