@@ -967,29 +967,3 @@ main {
   .email-btn { width: fit-content; min-width: 200px; }
 
 }
-
-/* ── Force light mode — prevents browser auto dark mode ─ */
-@media (prefers-color-scheme: dark) {
-  html, body { background: #f5f2eb !important; color: #1e1e1e !important; filter: none !important; }
-  .card, .dark-card { background: #ede9e1 !important; color: #1e1e1e !important; }
-  .navbar, .site-footer { background: transparent !important; color: #1e1e1e !important; }
-  .logo { color: #1e1e1e !important; }
-  .carousel-dot { color: rgba(30,30,30,0.4) !important; border-bottom-color: rgba(30,30,30,0.2) !important; }
-  .carousel-dot.active { color: #1e1e1e !important; }
-  .dot-indicator { background: #1e1e1e !important; }
-  .hero-name, .greeting, .hero-tagline, .about-text, .about-text p { color: #1e1e1e !important; }
-  .skill-icon-box { background: rgba(0,0,0,0.03) !important; color: #1e1e1e !important; }
-  .project-logo { background: rgba(0,0,0,0.03) !important; color: #1e1e1e !important; }
-  .project-body p { color: #1e1e1e !important; }
-  .project-link { color: #1e1e1e !important; }
-  .project-divider { border-color: rgba(30,30,30,0.15) !important; }
-  .social-circle { background: rgba(0,0,0,0.03) !important; color: #1e1e1e !important; }
-  .social-link { color: #1e1e1e !important; }
-  .email-btn { background: #1e1e1e !important; color: #f0ede6 !important; }
-  .resume-download { color: #1e1e1e !important; border-color: rgba(30,30,30,0.3) !important; }
-  .modal-overlay { background: rgba(0,0,0,0.5) !important; }
-  .email-modal { background: #ede9e1 !important; color: #1e1e1e !important; }
-  .form-label, .form-label input, .form-label textarea { color: #1e1e1e !important; background: rgba(0,0,0,0.03) !important; }
-  .send-btn { background: #1e1e1e !important; color: #f0ede6 !important; }
-  .carousel-slides { box-shadow: 6px 6px 14px rgba(0,0,0,0.14) !important; }
-}
