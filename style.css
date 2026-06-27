@@ -524,7 +524,7 @@ main {
 
 .resume-toolbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 12px 24px 8px;
 }
 
