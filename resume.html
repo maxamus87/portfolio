@@ -20,7 +20,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px 24px 0;
+      padding: 24px 24px 32px;
     }
 
     .resume-doc {
@@ -28,8 +28,17 @@
       color: #1e1e1e;
       width: 100%;
       max-width: 860px;
-      padding: 18px 52px 0;
+      padding: 18px 52px 24px;
       border: none;
+    }
+
+    /* Bottom padding above is for the on-screen/embedded view. The PDF
+       export is squeezed to fit exactly one printed page, so drop the
+       trailing padding there — it isn't needed once there's no card
+       background to breathe against. */
+    @media print {
+      body { padding-bottom: 0; }
+      .resume-doc { padding-bottom: 0; }
     }
 
     /* Header */
