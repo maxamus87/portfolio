@@ -205,6 +205,15 @@ main {
 .carousel-slide.card-enter .skill-icon-box:nth-child(8)  { animation-delay: 1.06s; }
 .carousel-slide.card-enter .skill-icon-box:nth-child(9)  { animation-delay: 1.19s; }
 .carousel-slide.card-enter .skill-icon-box:nth-child(10) { animation-delay: 1.32s; }
+.carousel-slide.card-enter .skill-icon-box:nth-child(11) { animation-delay: 1.45s; }
+.carousel-slide.card-enter .skill-icon-box:nth-child(12) { animation-delay: 1.58s; }
+.carousel-slide.card-enter .skill-icon-box:nth-child(13) { animation-delay: 1.71s; }
+.carousel-slide.card-enter .skill-icon-box:nth-child(14) { animation-delay: 1.84s; }
+.carousel-slide.card-enter .skill-icon-box:nth-child(15) { animation-delay: 1.97s; }
+.carousel-slide.card-enter .skill-icon-box:nth-child(16) { animation-delay: 2.10s; }
+.carousel-slide.card-enter .skill-icon-box:nth-child(17) { animation-delay: 2.23s; }
+.carousel-slide.card-enter .skill-icon-box:nth-child(18) { animation-delay: 2.36s; }
+.carousel-slide.card-enter .skill-icon-box:nth-child(19) { animation-delay: 2.49s; }
 
 .carousel-slide.card-enter .project-item:first-of-type { animation-delay: 0.2s; }
 .carousel-slide.card-enter .project-item:last-of-type  { animation-delay: 0.55s; }
@@ -609,7 +618,7 @@ main {
   text-align: left;
 }
 
-.project-logo--howcan {
+.project-logo--coffee {
   font-family: 'Caveat', cursive;
   font-size: 1.3rem;
   font-weight: 600;
