@@ -17,11 +17,10 @@
       color: #1e1e1e;
       font-family: 'Josefin Sans', "Century Gothic", "AppleGothic", sans-serif;
       font-weight: 300;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 60px 24px 80px;
+      padding: 24px 24px 0;
     }
 
     .resume-doc {
@@ -29,25 +28,25 @@
       color: #1e1e1e;
       width: 100%;
       max-width: 860px;
-      padding: 52px 52px 64px;
+      padding: 18px 52px 0;
       border: none;
     }
 
     /* Header */
     .resume-header {
-      margin-bottom: 24px;
-      padding-bottom: 16px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
       border-bottom: 1px solid #1e1e1e;
     }
 
     .resume-name {
       font-family: 'Josefin Sans', sans-serif;
-      font-size: 3rem;
+      font-size: 2.6rem;
       font-weight: 300;
       letter-spacing: 0.02em;
       line-height: 1;
       color: #1e1e1e;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .resume-title {
@@ -67,22 +66,22 @@
 
     /* Profile */
     .resume-profile {
-      margin-bottom: 28px;
-      padding-bottom: 24px;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
       border-bottom: 1px solid rgba(30,30,30,0.15);
     }
 
     .resume-profile p {
       font-size: 0.85rem;
-      line-height: 1.75;
+      line-height: 1.6;
       color: #333;
     }
 
     /* Two-column layout */
     .resume-body {
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 40px;
+      grid-template-columns: 260px 1fr;
+      gap: 32px;
     }
 
     /* Section headings */
@@ -94,15 +93,15 @@
       text-transform: uppercase;
       color: #1e1e1e;
       border-bottom: 1px solid #1e1e1e;
-      padding-bottom: 4px;
-      margin-bottom: 14px;
-      margin-top: 28px;
+      padding-bottom: 3px;
+      margin-bottom: 6px;
+      margin-top: 10px;
     }
 
     .resume-section-title:first-child { margin-top: 0; }
 
     /* Left column */
-    .left-col { font-size: 0.82rem; line-height: 1.7; }
+    .left-col { font-size: 0.82rem; line-height: 1.5; }
 
     .detail-label {
       font-size: 0.65rem;
@@ -126,13 +125,19 @@
     .detail-link:hover { color: #555; }
 
     /* Skills list */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10px;
+    }
+
     .skill-tag {
       display: inline-block;
       font-size: 0.72rem;
       color: #333;
       letter-spacing: 0.04em;
       padding: 3px 0;
-      line-height: 1.8;
+      line-height: 1.5;
     }
 
     .skill-tag::before {
@@ -141,7 +146,7 @@
     }
 
     /* Right column */
-    .right-col { font-size: 0.82rem; line-height: 1.7; }
+    .right-col { font-size: 0.82rem; line-height: 1.5; }
 
     .job-header {
       display: flex;
@@ -170,26 +175,26 @@
     .job-dates {
       font-size: 0.74rem;
       color: #888;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
       letter-spacing: 0.04em;
     }
 
     .job-desc {
       color: #333;
       font-size: 0.82rem;
-      line-height: 1.75;
-      margin-bottom: 6px;
+      line-height: 1.5;
+      margin-bottom: 4px;
     }
 
     .job-bullets {
       list-style: none;
-      margin-bottom: 24px;
+      margin-bottom: 6px;
     }
 
     .job-bullets li {
       font-size: 0.82rem;
       color: #444;
-      line-height: 1.75;
+      line-height: 1.5;
       padding-left: 14px;
       position: relative;
     }
@@ -201,7 +206,7 @@
       color: #aaa;
     }
 
-    .edu-entry { margin-bottom: 20px; }
+    .edu-entry { margin-bottom: 4px; }
 
     .edu-degree {
       font-weight: 600;
@@ -209,10 +214,17 @@
       color: #1e1e1e;
     }
 
+    .edu-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     .edu-school {
       font-size: 0.82rem;
       color: #555;
-      margin-bottom: 2px;
     }
 
     .edu-dates {
@@ -272,27 +284,27 @@
         <a class="detail-link" href="https://github.com/maxamus87">GitHub</a>
 
         <h2 class="resume-section-title">Technical Skills</h2>
-        <div>
-          <div class="skill-tag">HTML5</div><br />
-          <div class="skill-tag">CSS3</div><br />
-          <div class="skill-tag">JavaScript</div><br />
-          <div class="skill-tag">React</div><br />
-          <div class="skill-tag">React Router</div><br />
-          <div class="skill-tag">Vite</div><br />
-          <div class="skill-tag">Node.js</div><br />
-          <div class="skill-tag">Express</div><br />
-          <div class="skill-tag">PostgreSQL</div><br />
-          <div class="skill-tag">Prisma</div><br />
-          <div class="skill-tag">Supabase</div><br />
-          <div class="skill-tag">Google Maps API</div><br />
-          <div class="skill-tag">Bootstrap</div><br />
-          <div class="skill-tag">Figma</div><br />
-          <div class="skill-tag">Git &amp; GitHub</div><br />
-          <div class="skill-tag">Vercel</div><br />
-          <div class="skill-tag">Bash</div><br />
-          <div class="skill-tag">VS Code</div><br />
-          <div class="skill-tag">Claude Code</div><br />
-          <div class="skill-tag">Digital Illustration</div><br />
+        <div class="skill-grid">
+          <div class="skill-tag">HTML5</div>
+          <div class="skill-tag">CSS3</div>
+          <div class="skill-tag">JavaScript</div>
+          <div class="skill-tag">React</div>
+          <div class="skill-tag">React Router</div>
+          <div class="skill-tag">Vite</div>
+          <div class="skill-tag">Node.js</div>
+          <div class="skill-tag">Express</div>
+          <div class="skill-tag">PostgreSQL</div>
+          <div class="skill-tag">Prisma</div>
+          <div class="skill-tag">Supabase</div>
+          <div class="skill-tag">Google Maps API</div>
+          <div class="skill-tag">Bootstrap</div>
+          <div class="skill-tag">Figma</div>
+          <div class="skill-tag">Git &amp; GitHub</div>
+          <div class="skill-tag">Vercel</div>
+          <div class="skill-tag">Bash</div>
+          <div class="skill-tag">VS Code</div>
+          <div class="skill-tag">Claude Code</div>
+          <div class="skill-tag">Digital Illustration</div>
           <div class="skill-tag">Windows</div>
         </div>
 
@@ -352,20 +364,26 @@
 
         <div class="edu-entry">
           <p class="edu-degree">Web Development Bootcamp</p>
-          <p class="edu-school">Color Coded Labs — Cohort 9</p>
-          <p class="edu-dates">Apr 2026 — Aug 2026</p>
+          <div class="edu-meta">
+            <p class="edu-school">Color Coded Labs — Cohort 9</p>
+            <p class="edu-dates">Apr 2026 — Aug 2026</p>
+          </div>
         </div>
 
         <div class="edu-entry">
           <p class="edu-degree">Some College</p>
-          <p class="edu-school">Columbus State Community College</p>
-          <p class="edu-dates">2014 — 2017</p>
+          <div class="edu-meta">
+            <p class="edu-school">Columbus State Community College</p>
+            <p class="edu-dates">2014 — 2017</p>
+          </div>
         </div>
 
         <div class="edu-entry">
           <p class="edu-degree">GED</p>
-          <p class="edu-school">Oakstone Academy High School</p>
-          <p class="edu-dates">2010 — 2013</p>
+          <div class="edu-meta">
+            <p class="edu-school">Oakstone Academy High School</p>
+            <p class="edu-dates">2010 — 2013</p>
+          </div>
         </div>
 
       </div>
