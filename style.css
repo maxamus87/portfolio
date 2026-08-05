@@ -214,6 +214,7 @@ main {
 .carousel-slide.card-enter .skill-icon-box:nth-child(17) { animation-delay: 2.23s; }
 .carousel-slide.card-enter .skill-icon-box:nth-child(18) { animation-delay: 2.36s; }
 .carousel-slide.card-enter .skill-icon-box:nth-child(19) { animation-delay: 2.49s; }
+.carousel-slide.card-enter .skill-icon-box:nth-child(20) { animation-delay: 2.62s; }
 
 .carousel-slide.card-enter .project-item:first-of-type { animation-delay: 0.2s; }
 .carousel-slide.card-enter .project-item:last-of-type  { animation-delay: 0.55s; }
