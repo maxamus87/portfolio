@@ -1,10 +1,20 @@
 // ── Auto-size resume iframe ────────────────────────────────
 const resumeFrame = document.querySelector('.resume-frame');
 if (resumeFrame) {
-  resumeFrame.addEventListener('load', () => {
+  const resizeResumeFrame = () => {
     const doc = resumeFrame.contentDocument || resumeFrame.contentWindow.document;
+    if (!doc || !doc.documentElement) return;
     resumeFrame.style.height = doc.documentElement.scrollHeight + 'px';
-  });
+  };
+
+  // The iframe may already be loaded (e.g. cached) by the time this script
+  // runs, in which case the 'load' event has already fired and would never
+  // be caught below — so size it immediately if so, in addition to
+  // listening for 'load' to catch the normal (not-yet-loaded) case.
+  if (resumeFrame.contentDocument && resumeFrame.contentDocument.readyState === 'complete') {
+    resizeResumeFrame();
+  }
+  resumeFrame.addEventListener('load', resizeResumeFrame);
 }
 
 // ── Carousel ───────────────────────────────────────────────
