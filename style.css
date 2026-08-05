@@ -931,7 +931,7 @@ main {
   .about-text p { max-width: 100%; }
 
   .skills-card { padding: 120px 80px 80px; }
-  .skills-content { grid-template-columns: repeat(5, 96px); gap: 16px; }
+  .skills-content { grid-template-columns: repeat(5, 96px); gap: 36px 16px; }
 
   .projects-card { padding: 80px 100px 100px; }
   .project-item { gap: 40px; }
@@ -966,7 +966,7 @@ main {
   .about-text p { text-indent: 0; }
 
   .skills-card { padding: 80px 20px 40px; }
-  .skills-content { grid-template-columns: repeat(2, 96px); gap: 30px; }
+  .skills-content { grid-template-columns: repeat(2, 96px); gap: 40px 30px; }
 
   .projects-card { padding: 80px 24px; }
   .project-item { flex-direction: column; gap: 20px; text-align: center; }
