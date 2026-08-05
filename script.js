@@ -1,10 +1,29 @@
 // ── Auto-size resume iframe ────────────────────────────────
 const resumeFrame = document.querySelector('.resume-frame');
 if (resumeFrame) {
-  const resizeResumeFrame = () => {
+  let resumeResizeObserver = null;
+
+  const setupResumeResize = () => {
     const doc = resumeFrame.contentDocument || resumeFrame.contentWindow.document;
     if (!doc || !doc.documentElement) return;
-    resumeFrame.style.height = doc.documentElement.scrollHeight + 'px';
+
+    const resize = () => {
+      resumeFrame.style.height = doc.documentElement.scrollHeight + 'px';
+    };
+    resize();
+
+    // A single one-time measurement isn't enough: web fonts finishing their
+    // swap after the initial paint, or the window being resized (which can
+    // cross the resume's own responsive breakpoints), both change the
+    // resume's actual height afterward. Keep watching so the iframe stays
+    // in sync instead of freezing at whatever height it had at load time.
+    if (resumeResizeObserver) resumeResizeObserver.disconnect();
+    if (window.ResizeObserver) {
+      resumeResizeObserver = new ResizeObserver(resize);
+      resumeResizeObserver.observe(doc.documentElement);
+    } else {
+      window.addEventListener('resize', resize);
+    }
   };
 
   // The iframe may already be loaded (e.g. cached) by the time this script
@@ -12,9 +31,9 @@ if (resumeFrame) {
   // be caught below — so size it immediately if so, in addition to
   // listening for 'load' to catch the normal (not-yet-loaded) case.
   if (resumeFrame.contentDocument && resumeFrame.contentDocument.readyState === 'complete') {
-    resizeResumeFrame();
+    setupResumeResize();
   }
-  resumeFrame.addEventListener('load', resizeResumeFrame);
+  resumeFrame.addEventListener('load', setupResumeResize);
 }
 
 // ── Carousel ───────────────────────────────────────────────
