@@ -36,6 +36,18 @@ if (resumeFrame) {
   resumeFrame.addEventListener('load', setupResumeResize);
 }
 
+// ── Skill icon stagger ─────────────────────────────────────
+// Give each skill icon its own entrance delay, spread evenly so the whole
+// grid finishes in about the same time no matter how many icons there are.
+// New icons added to the HTML are picked up automatically.
+const skillIcons = document.querySelectorAll('.skill-icon-box');
+const SKILL_STAGGER_START = 0.15; // seconds before the first icon
+const SKILL_STAGGER_TOTAL = 2.5;  // seconds between first and last icon
+const skillStep = SKILL_STAGGER_TOTAL / Math.max(skillIcons.length - 1, 1);
+skillIcons.forEach((icon, i) => {
+  icon.style.setProperty('--stagger-delay', `${(SKILL_STAGGER_START + i * skillStep).toFixed(2)}s`);
+});
+
 // ── Carousel ───────────────────────────────────────────────
 const slidesContainer = document.getElementById('carouselSlides');
 const slides = [...document.querySelectorAll('.carousel-slide')];
