@@ -289,12 +289,12 @@
 
     <header class="resume-header">
       <h1 class="resume-name">Max Messick</h1>
-      <p class="resume-title">Junior Web Developer</p>
+      <p class="resume-title">Full-Stack Developer</p>
       <p class="resume-contact">Columbus, Ohio &nbsp;&middot;&nbsp; (614) 749-5434 &nbsp;&middot;&nbsp; maxamus87@gmail.com</p>
     </header>
 
     <section class="resume-profile">
-      <p>Creative and curious Junior Web Developer with a passion for building intuitive, visually compelling web experiences. Over a decade of customer service and technical support experience gives me strong communication skills and a natural instinct for problem-solving. A lifelong computer enthusiast, I recently completed a web development bootcamp at Color Coded Labs, channeling my creativity and a digital illustrator's eye for design into projects that balance aesthetics with functionality.</p>
+      <p>Full-stack developer building React and TypeScript front ends backed by Node.js/Express REST APIs and PostgreSQL, deployed to the cloud through CI/CD. Uses Claude Code daily for AI-assisted development, reviewing and testing every change, and debugs by tracing problems to their root cause. Nearly nine years of technical support at Columbus Metropolitan Library bring strong troubleshooting and communication skills, and a digital illustrator's eye for design shapes interfaces that are clear and polished.</p>
     </section>
 
     <div class="resume-body">
@@ -314,43 +314,78 @@
 
         <h2 class="resume-section-title">Technical Skills</h2>
         <div class="skill-grid">
+          <div class="skill-tag">JavaScript</div>
+          <div class="skill-tag">TypeScript</div>
+          <div class="skill-tag">Python</div>
+          <div class="skill-tag">SQL</div>
           <div class="skill-tag">HTML5</div>
           <div class="skill-tag">CSS3</div>
-          <div class="skill-tag">JavaScript</div>
           <div class="skill-tag">React</div>
           <div class="skill-tag">React Router</div>
           <div class="skill-tag">Vite</div>
           <div class="skill-tag">Node.js</div>
           <div class="skill-tag">Express</div>
+          <div class="skill-tag">REST APIs</div>
           <div class="skill-tag">PostgreSQL</div>
           <div class="skill-tag">Prisma</div>
           <div class="skill-tag">Supabase</div>
-          <div class="skill-tag">Google Maps API</div>
-          <div class="skill-tag">Bootstrap</div>
-          <div class="skill-tag">Figma</div>
+          <div class="skill-tag">Docker</div>
           <div class="skill-tag">Git &amp; GitHub</div>
           <div class="skill-tag">Vercel</div>
-          <div class="skill-tag">Bash</div>
-          <div class="skill-tag">VS Code</div>
+          <div class="skill-tag">Postman</div>
+          <div class="skill-tag">Jira</div>
           <div class="skill-tag">Claude Code</div>
-          <div class="skill-tag">Digital Illustration</div>
-          <div class="skill-tag">Windows</div>
+          <div class="skill-tag">Google Maps API</div>
+          <div class="skill-tag">Figma</div>
+          <div class="skill-tag">Bash</div>
         </div>
 
         <h2 class="resume-section-title">Professional Skills</h2>
         <div>
-          <div class="skill-tag">Customer Service</div><br />
-          <div class="skill-tag">Technical Support</div><br />
+          <div class="skill-tag">Technical Troubleshooting</div><br />
           <div class="skill-tag">Communication</div><br />
+          <div class="skill-tag">Team Collaboration</div><br />
           <div class="skill-tag">Data Tracking</div><br />
           <div class="skill-tag">Microsoft Office</div><br />
-          <div class="skill-tag">Problem-Solving</div>
+          <div class="skill-tag">Digital Illustration</div>
         </div>
 
       </div>
 
       <!-- RIGHT COLUMN -->
       <div class="right-col">
+
+        <h2 class="resume-section-title">Projects</h2>
+
+        <div class="edu-entry">
+          <p class="edu-degree">ToolBnb — Full-Stack Tool Lending Platform</p>
+          <p class="edu-school">React, TypeScript, Node.js, Express, PostgreSQL (Prisma + Supabase)</p>
+          <ul class="job-bullets">
+            <li>Team capstone: built a RESTful Express API with modular routes, controllers, and middleware over a PostgreSQL schema.</li>
+            <li>Secured endpoints with authentication and request validation; tested APIs in Postman.</li>
+            <li>Tracked work in Jira with peer code review on GitHub and CI/CD to Vercel on every push.</li>
+          </ul>
+          <a class="detail-link" href="https://toolrental-1-frontend.vercel.app/" target="_blank" rel="noopener">toolrental-1-frontend.vercel.app</a>
+        </div>
+
+        <div class="edu-entry">
+          <p class="edu-degree">Where's My Coffee? — Full-Stack Coffee Shop Finder</p>
+          <p class="edu-school">React, Vite, Express, PostgreSQL (Prisma + Supabase), Google Maps API</p>
+          <ul class="job-bullets">
+            <li>Interactive Google Maps view with search, filtering, reviews, and favorites over an Express REST API.</li>
+            <li>JWT authentication for user routes, with API keys and secrets kept in environment variables.</li>
+          </ul>
+          <a class="detail-link" href="https://wheresmycoffee.vercel.app/" target="_blank" rel="noopener">wheresmycoffee.vercel.app</a>
+        </div>
+
+        <div class="edu-entry">
+          <p class="edu-degree">Developer Portfolio</p>
+          <p class="edu-school">HTML, CSS, JavaScript, Puppeteer, Claude Code</p>
+          <ul class="job-bullets">
+            <li>Traced an intermittent production bug to a load-event race condition and fixed it with a ResizeObserver.</li>
+            <li>Automated PDF resume generation from HTML with Puppeteer.</li>
+          </ul>
+        </div>
 
         <h2 class="resume-section-title">Employment History</h2>
 
@@ -360,10 +395,9 @@
         <p class="job-company">Columbus Metropolitan Library</p>
         <p class="job-dates">Nov 2021 — Mar 2026</p>
         <ul class="job-bullets">
-          <li>Responded to 100+ customer inquiries daily, ensuring accurate information delivery.</li>
+          <li>Resolved 100+ queued inquiries daily, troubleshooting technical and account issues.</li>
           <li>Streamlined data tracking, improving response time by 20%.</li>
-          <li>Enhanced customer engagement through proactive chat assistance.</li>
-          <li>Collaborated with teams to update library event information regularly.</li>
+          <li>Kept customer information confidential while providing phone and live chat support.</li>
         </ul>
 
         <div class="job-header">
@@ -372,27 +406,9 @@
         <p class="job-company">Columbus Metropolitan Library</p>
         <p class="job-dates">Jun 2017 — Nov 2021</p>
         <ul class="job-bullets">
-          <li>Enhanced customer satisfaction through prompt responses to inquiries.</li>
+          <li>Troubleshot and supported self-service technology for patrons and staff.</li>
           <li>Streamlined technology support processes, reducing wait times.</li>
-          <li>Improved collection organization, increasing ease of access.</li>
-          <li>Fostered a welcoming environment for all patrons.</li>
         </ul>
-
-        <h2 class="resume-section-title">Projects</h2>
-
-        <div class="edu-entry">
-          <p class="edu-degree">Where's My Coffee? — Full-Stack Coffee Shop Finder</p>
-          <p class="edu-school">React, Vite, Express, PostgreSQL (Prisma + Supabase), Google Maps API</p>
-          <p class="job-desc">Full-stack app for discovering and reviewing local coffee shops, with an interactive map, search/filtering, JWT auth, and favoriting.</p>
-          <a class="detail-link" href="https://wheresmycoffee.vercel.app/" target="_blank" rel="noopener">wheresmycoffee.vercel.app</a>
-        </div>
-
-        <div class="edu-entry">
-          <p class="edu-degree">Tool Lending Library — Full-Stack Tool Rental Platform</p>
-          <p class="edu-school">React, Vite, Node.js, Express, PostgreSQL (Prisma + Supabase)</p>
-          <p class="job-desc">Collaborative capstone project for browsing, listing, and swapping rental tools, with search/filtering, listing management, tool swap requests, and Supabase-based authentication.</p>
-          <a class="detail-link" href="https://toolrental-1-frontend.vercel.app/" target="_blank" rel="noopener">toolrental-1-frontend.vercel.app</a>
-        </div>
 
         <h2 class="resume-section-title">Education</h2>
 
